@@ -4,8 +4,8 @@ CREATE DATABASE Agencia_Viajes;
 -- Usar la base de datos 
 USE Agencia_Viajes;
 
----Creacion de tablas
------ 1- Tabla destinos
+-- Creacion de tablas
+-- 1- Tabla destinos
 CREATE TABLE Destinos (
     Nombre_destino VARCHAR(50) NOT NULL PRIMARY KEY,
     Descripcion VARCHAR(50) NULL
@@ -93,7 +93,7 @@ CREATE TABLE Billetes (
         ON DELETE RESTRICT
         ON UPDATE CASCADE
 );
---- 9- Tabla Puntos_Paradas
+-- 9- Tabla Puntos_Paradas
 CREATE TABLE Puntos_paradas (
     Secuencia_lugar INT NOT NULL,
     Rut_nombre VARCHAR(100) NOT NULL,

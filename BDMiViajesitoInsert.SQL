@@ -1,4 +1,4 @@
---- 1- Tabla destinos
+-- 1- Tabla destinos
 INSERT INTO Destinos (Nombre_destino, Descripcion) VALUES
 ('Cartagena', 'Ciudad turística'),
 ('Bogotá', 'Capital del país'),
@@ -11,7 +11,7 @@ INSERT INTO Destinos (Nombre_destino, Descripcion) VALUES
 ('Bucaramanga', 'Ciudad bonita'),
 ('Leticia', 'Amazonas colombiano');
 
----2- Tabla Modalidad de transportes
+-- 2- Tabla Modalidad de transportes
 INSERT INTO Modalidades_transportes 
 (Tipo_medio, Tiempo_estandar, Caracteristicas, Precio_base, Velocidad_promedio)
 VALUES
@@ -42,7 +42,7 @@ VALUES
 ('Ruta Amazonas', 180000.000, 'Martes y Sábado', 'Ruta fluvial y selvática', 40, 2, 'Leticia');
 
 
---- 4-Tabla Pasajeros
+-- 4-Tabla Pasajeros
 INSERT INTO Pasajeros 
 (Cedula, Apellidos_nombre, Telefono)
 VALUES
@@ -57,7 +57,7 @@ VALUES
 ('1001001009', 'Patiño Rincón Sofía', '3186009900'),
 ('1001001010', 'García Ruiz Camila', '3195000011');
 
---- 5- Tabla Vehiculos
+-- 5- Tabla Vehiculos
 INSERT INTO Vehiculos 
 (Matricula, Modelo, Fabricante, Numero_plazas, Caracteristicas_basicas, Mod_tipo)
 VALUES
@@ -72,7 +72,7 @@ VALUES
 ('IJK901', 'Buseta X1', 'Chevrolet', 30, 'Transporte urbano', 'Buseta'),
 ('JKL012', 'Teleférico A1', 'Doppelmayr', 10, 'Cabina panorámica', 'Teleférico');
 
---6-Tabla conductores
+-- 6-Tabla conductores
 INSERT INTO Conductores
 (Cedula, Nombre_apellidos, Telefono, Direccion, Veh_matricula)
 VALUES
@@ -87,7 +87,7 @@ VALUES
 ('2002002009', 'Esteban Vargas León', '3009990011', 'Carrera 50 #15-10', 'IJK901'),
 ('2002002010', 'Carolina Mejía Ruiz', '3010001122', 'Calle 12 #3-45', 'JKL012');
 
---7- Tabla Revisiones
+-- 7- Tabla Revisiones
 INSERT INTO Revisiones
 (Codigo_revision, Fecha_de_revision, Diagnostico, Costo_revision, Veh_Matricula)
 VALUES
@@ -102,7 +102,7 @@ VALUES
 ('REV009', '2025-01-30', 'Chequeo general', 160000.000, 'IJK901'),
 ('REV010', '2025-02-02', 'Diagnóstico de vibración', 110000.000, 'JKL012');
 
---- 8- Tabla Billetes
+-- 8- Tabla Billetes
 INSERT INTO Billetes
 (Id_Viaje, Fecha_viaje, Hora_de_llegada_prevista, Importe, Hora_salida, Pas_Cedula, Rut_nombre)
 VALUES
@@ -117,7 +117,7 @@ VALUES
 ('VIA009', '2025-02-18', '14:10:00', 105000, '11:10:00', '1001001009', 'Ruta Santander'),
 ('VIA010', '2025-02-19', '16:00:00', 180000, '14:00:00', '1001001010', 'Ruta Amazonas');
 
---9- Puntos_Paradas
+-- 9- Puntos_Paradas
 INSERT INTO Puntos_paradas 
 (Secuencia_lugar, Rut_nombre, Nombre_lugar, Hora_de_llegada, Actividad_a_realizar, Tiempo_de_parada)
 VALUES
@@ -136,7 +136,7 @@ VALUES
 (1, 'Ruta Cafetera', 'Plaza de Bolívar', '09:10:00', 'Tour guiado', 20),
 (2, 'Ruta Cafetera', 'Mirador de los Nevados', '10:00:00', 'Fotografías', 15);
 
---10- Reparaciones
+-- 10- Reparaciones
 INSERT INTO Reparaciones
 (Codigo_reparacion, Tiempo_empleado, Comentario, Costo_reparacion, Rev_Codigo)
 VALUES
@@ -151,7 +151,7 @@ VALUES
 ('REP009', 85, 'Ajuste transmisión', 110000.000, 'REV009'),
 ('REP010', 100, 'Corrección de vibración', 120000.000, 'REV010');
 
---11- Rutas_modalidades
+-- 11- Rutas_modalidades
 
 INSERT INTO Rutas_Modalidades (Mod_tipo, Rut_nombre)
 VALUES
