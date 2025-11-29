@@ -31,3 +31,20 @@ CREATE TABLE Rutas (
     Des_nombre VARCHAR(50) NOT NULL,
     FOREIGN KEY (Des_nombre) REFERENCES Destinos(Nombre_destino)
 );
+
+-- Tabla Pasajeros
+CREATE TABLE Pasajeros (
+    Cedula VARCHAR(20) NOT NULL PRIMARY KEY,
+    Apellidos_nombre VARCHAR(100) NOT NULL,
+    Telefono VARCHAR(20) NOT NULL
+);
+-- Tabla Vehiculos
+CREATE TABLE Vehiculos (
+    Matricula VARCHAR(20) NOT NULL PRIMARY KEY,
+    Modelo VARCHAR(50) NOT NULL,
+    Fabricante VARCHAR(50) NOT NULL,
+    Numero_plazas INT NOT NULL,
+    Caracteristicas_basicas VARCHAR(255) NULL,
+    Mod_tipo VARCHAR(30) NOT NULL,
+    FOREIGN KEY (Mod_tipo) REFERENCES Modalidades_transportes(Tipo_medio)
+);
