@@ -48,3 +48,22 @@ CREATE TABLE Vehiculos (
     Mod_tipo VARCHAR(30) NOT NULL,
     FOREIGN KEY (Mod_tipo) REFERENCES Modalidades_transportes(Tipo_medio)
 );
+-- Tabla Conductores
+CREATE TABLE Conductores (
+    Cedula VARCHAR(20) NOT NULL PRIMARY KEY,
+    Nombre_apellidos VARCHAR(100) NOT NULL,
+    Telefono VARCHAR(20) NOT NULL,
+    Direccion VARCHAR(150) NULL,
+    Veh_matricula VARCHAR(20) NOT NULL,
+    FOREIGN KEY (Veh_matricula) REFERENCES Vehiculos(Matricula)
+);
+
+-- Tabla Revisiones
+CREATE TABLE Revisiones (
+    Codigo_revision VARCHAR(50) NOT NULL PRIMARY KEY,
+    Fecha_de_revision DATE NOT NULL,
+    Diagnostico VARCHAR(70) NULL,
+    Costo_revision NUMERIC(10,3) NULL,
+    Veh_Matricula VARCHAR(20) NOT NULL,
+    FOREIGN KEY (Veh_Matricula) REFERENCES Vehiculos(Matricula)
+);
