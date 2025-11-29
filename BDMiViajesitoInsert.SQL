@@ -42,7 +42,7 @@ VALUES
 ('Ruta Amazonas', 180000.000, 'Martes y Sábado', 'Ruta fluvial y selvática', 40, 2, 'Leticia');
 
 
----Pasajeros
+--- Tabla Pasajeros
 INSERT INTO Pasajeros 
 (Cedula, Apellidos_nombre, Telefono)
 VALUES
@@ -56,3 +56,18 @@ VALUES
 ('1001001008', 'Moreno Ayala Diego', '3177008899'),
 ('1001001009', 'Patiño Rincón Sofía', '3186009900'),
 ('1001001010', 'García Ruiz Camila', '3195000011');
+
+--- Tabla Vehiculos
+INSERT INTO Vehiculos 
+(Matricula, Modelo, Fabricante, Numero_plazas, Caracteristicas_basicas, Mod_tipo)
+VALUES
+('ABC123', 'Sprinter 2020', 'Mercedes-Benz', 20, 'Aire acondicionado, TV', 'Bus'),
+('BCD234', 'A320', 'Airbus', 180, 'Clase económica y ejecutiva', 'Avión'),
+('CDE345', 'Lancha XT', 'Yamaha', 12, 'Motor fuera de borda', 'Lancha'),
+('DEF456', 'Logan 2018', 'Renault', 4, 'Económico, AC', 'Taxi'),
+('EFG567', 'Serie M', 'MetroMed', 300, 'Vagón eléctrico', 'Metro'),
+('FGH678', 'Tren 5000', 'CAF', 400, 'Alta capacidad', 'Tren'),
+('GHI789', 'Bicicleta Pro', 'GW', 1, 'Montaña', 'Cicla'),
+('HIJ890', 'NK 200', 'AKT', 2, 'Moto urbana', 'Moto'),
+('IJK901', 'Buseta X1', 'Chevrolet', 30, 'Transporte urbano', 'Buseta'),
+('JKL012', 'Teleférico A1', 'Doppelmayr', 10, 'Cabina panorámica', 'Teleférico');
