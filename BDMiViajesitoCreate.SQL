@@ -67,3 +67,36 @@ CREATE TABLE Revisiones (
     Veh_Matricula VARCHAR(20) NOT NULL,
     FOREIGN KEY (Veh_Matricula) REFERENCES Vehiculos(Matricula)
 );
+
+-- Tabla Billetes
+CREATE TABLE Billetes (
+    Id_Viaje VARCHAR(50) NOT NULL PRIMARY KEY,
+    Fecha_viaje DATE NOT NULL,
+    Hora_de_llegada_prevista TIME NOT NULL,
+    Importe FLOAT NOT NULL,
+    Hora_salida TIME NOT NULL,
+    Pas_Cedula VARCHAR(20) NOT NULL,
+    Rut_nombre VARCHAR(100) NOT NULL,
+    FOREIGN KEY (Pas_Cedula) REFERENCES Pasajeros(Cedula),
+    FOREIGN KEY (Rut_nombre) REFERENCES Rutas(Nombre_ruta)
+);
+---Tabla Puntos_Paradas
+CREATE TABLE Puntos_paradas (
+    Secuencia_lugar INT NOT NULL,
+    Rut_nombre VARCHAR(100) NOT NULL,
+    Nombre_lugar VARCHAR(100) NOT NULL,
+    Hora_de_llegada TIME NULL,
+    Actividad_a_realizar VARCHAR(100) NULL,
+    Tiempo_de_parada INT NULL,
+    PRIMARY KEY (Secuencia_lugar, Rut_nombre),
+    FOREIGN KEY (Rut_nombre) REFERENCES Rutas(Nombre_ruta)
+);
+-- Tabla Reparaciones
+CREATE TABLE Reparaciones (
+    Codigo_reparacion VARCHAR(30) NOT NULL PRIMARY KEY,
+    Tiempo_empleado INT NULL,
+    Comentario VARCHAR(50) NULL,
+    Costo_reparacion NUMERIC(10,3) NOT NULL,
+    Rev_Codigo VARCHAR(50) NOT NULL,
+    FOREIGN KEY (Rev_Codigo) REFERENCES Revisiones(Codigo_revision)
+);
