@@ -136,4 +136,32 @@ VALUES
 (1, 'Ruta Cafetera', 'Plaza de Bolívar', '09:10:00', 'Tour guiado', 20),
 (2, 'Ruta Cafetera', 'Mirador de los Nevados', '10:00:00', 'Fotografías', 15);
 
---10-
+--10- Reparaciones
+INSERT INTO Reparaciones
+(Codigo_reparacion, Tiempo_empleado, Comentario, Costo_reparacion, Rev_Codigo)
+VALUES
+('REP001', 45, 'Cambio de filtros', 50000.000, 'REV001'),
+('REP002', 60, 'Ajuste menor', 70000.000, 'REV002'),
+('REP003', 90, 'Reparación del motor', 150000.000, 'REV003'),
+('REP004', 30, 'Cambio de pastillas', 40000.000, 'REV004'),
+('REP005', 120, 'Cambio completo de llantas', 200000.000, 'REV005'),
+('REP006', 50, 'Corrección de fallas eléctricas', 60000.000, 'REV006'),
+('REP007', 75, 'Afinación general', 90000.000, 'REV007'),
+('REP008', 40, 'Reparación ligera', 55000.000, 'REV008'),
+('REP009', 85, 'Ajuste transmisión', 110000.000, 'REV009'),
+('REP010', 100, 'Corrección de vibración', 120000.000, 'REV010');
+
+--11- Rutas_modalidades
+
+INSERT INTO Rutas_Modalidades (Mod_tipo, Rut_nombre)
+VALUES
+('Bus', 'Ruta Caribe 1'),
+('Bus', 'Ruta Capital 1'),
+('Tren', 'Ruta Primavera'),
+('Bus', 'Ruta Pacífico'),
+('Bus', 'Ruta Carnaval'),
+('Metro', 'Ruta Sierra Nevada'),
+('Lancha', 'Ruta Isla Paraíso'),
+('Buseta', 'Ruta Cafetera'),
+('Taxi', 'Ruta Santander'),
+('Lancha', 'Ruta Amazonas');
