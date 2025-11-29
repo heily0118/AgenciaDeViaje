@@ -100,3 +100,13 @@ CREATE TABLE Reparaciones (
     Rev_Codigo VARCHAR(50) NOT NULL,
     FOREIGN KEY (Rev_Codigo) REFERENCES Revisiones(Codigo_revision)
 );
+
+-- Tabla Rutas_Modalidades
+
+CREATE TABLE Rutas_Modalidades (
+    Mod_tipo VARCHAR(30) NOT NULL,
+    Rut_nombre VARCHAR(100) NOT NULL,
+    PRIMARY KEY (Mod_tipo, Rut_nombre),
+    FOREIGN KEY (Mod_tipo) REFERENCES Modalidades_transportes(Tipo_medio),
+    FOREIGN KEY (Rut_nombre) REFERENCES Rutas(Nombre_ruta)
+);
