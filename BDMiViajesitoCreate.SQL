@@ -5,13 +5,13 @@ CREATE DATABASE Agencia_Viajes;
 USE Agencia_Viajes;
 
 ---Creacion de tablas
------Tabla destinos
+----- 1- Tabla destinos
 CREATE TABLE Destinos (
     Nombre_destino VARCHAR(50) NOT NULL PRIMARY KEY,
     Descripcion VARCHAR(50) NULL
 );
 
---  Tabla modalidades_transportes
+-- 2-  Tabla modalidades_transportes
 CREATE TABLE Modalidades_transportes (
     Tipo_medio VARCHAR(30) NOT NULL PRIMARY KEY,
     Tiempo_estandar VARCHAR(225) NULL,
@@ -20,7 +20,7 @@ CREATE TABLE Modalidades_transportes (
     Velocidad_promedio INT NULL
 );
 
--- Tabla Rutas
+-- 3- Tabla Rutas
 CREATE TABLE Rutas (
     Nombre_ruta VARCHAR(100) NOT NULL PRIMARY KEY,
     Precio_fijo NUMERIC(10,3) NOT NULL,
@@ -32,13 +32,13 @@ CREATE TABLE Rutas (
     FOREIGN KEY (Des_nombre) REFERENCES Destinos(Nombre_destino)
 );
 
--- Tabla Pasajeros
+-- 4- Tabla Pasajeros
 CREATE TABLE Pasajeros (
     Cedula VARCHAR(20) NOT NULL PRIMARY KEY,
     Apellidos_nombre VARCHAR(100) NOT NULL,
     Telefono VARCHAR(20) NOT NULL
 );
--- Tabla Vehiculos
+-- 5- Tabla Vehiculos
 CREATE TABLE Vehiculos (
     Matricula VARCHAR(20) NOT NULL PRIMARY KEY,
     Modelo VARCHAR(50) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE Vehiculos (
     Mod_tipo VARCHAR(30) NOT NULL,
     FOREIGN KEY (Mod_tipo) REFERENCES Modalidades_transportes(Tipo_medio)
 );
--- Tabla Conductores
+-- 6- Tabla Conductores
 CREATE TABLE Conductores (
     Cedula VARCHAR(20) NOT NULL PRIMARY KEY,
     Nombre_apellidos VARCHAR(100) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE Conductores (
     FOREIGN KEY (Veh_matricula) REFERENCES Vehiculos(Matricula)
 );
 
--- Tabla Revisiones
+-- 7- Tabla Revisiones
 CREATE TABLE Revisiones (
     Codigo_revision VARCHAR(50) NOT NULL PRIMARY KEY,
     Fecha_de_revision DATE NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE Revisiones (
     FOREIGN KEY (Veh_Matricula) REFERENCES Vehiculos(Matricula)
 );
 
--- Tabla Billetes
+-- 8- Tabla Billetes
 CREATE TABLE Billetes (
     Id_Viaje VARCHAR(50) NOT NULL PRIMARY KEY,
     Fecha_viaje DATE NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE Billetes (
     FOREIGN KEY (Pas_Cedula) REFERENCES Pasajeros(Cedula),
     FOREIGN KEY (Rut_nombre) REFERENCES Rutas(Nombre_ruta)
 );
----Tabla Puntos_Paradas
+--- 9- Tabla Puntos_Paradas
 CREATE TABLE Puntos_paradas (
     Secuencia_lugar INT NOT NULL,
     Rut_nombre VARCHAR(100) NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE Puntos_paradas (
     PRIMARY KEY (Secuencia_lugar, Rut_nombre),
     FOREIGN KEY (Rut_nombre) REFERENCES Rutas(Nombre_ruta)
 );
--- Tabla Reparaciones
+-- 10- Tabla Reparaciones
 CREATE TABLE Reparaciones (
     Codigo_reparacion VARCHAR(30) NOT NULL PRIMARY KEY,
     Tiempo_empleado INT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE Reparaciones (
     FOREIGN KEY (Rev_Codigo) REFERENCES Revisiones(Codigo_revision)
 );
 
--- Tabla Rutas_Modalidades
+-- 11- Tabla Rutas_Modalidades
 
 CREATE TABLE Rutas_Modalidades (
     Mod_tipo VARCHAR(30) NOT NULL,
