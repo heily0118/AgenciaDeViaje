@@ -23,7 +23,6 @@ CREATE TABLE Modalidades_transportes (
 CREATE TABLE Rutas (
     Nombre_ruta VARCHAR(100) NOT NULL PRIMARY KEY,
     Precio_fijo NUMERIC(10,3) NOT NULL,
-    Dias_opera VARCHAR(300) NULL,
     Descripcion_general VARCHAR(300) NULL,
     Kilometraje_recorrido INT NULL,
     Duracion_total INT NULL,
