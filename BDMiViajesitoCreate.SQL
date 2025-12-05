@@ -130,3 +130,11 @@ CREATE TABLE Rutas_Modalidades (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+-- 12 - Tabla Rutas_DiasOpera
+
+CREATE TABLE Rutas_DiasOpera (
+   Rut_nombre VARCHAR(100) NOT NULL,
+   Dia VARCHAR(20) NOT NULL,
+   PRIMARY KEY (Rut_nombre, Dia),
+   FOREIGN KEY (Rut_nombre) REFERENCES Rutas(Nombre_ruta)
+);
